@@ -32,7 +32,7 @@ DiscoVarDenovo is a high memory short-read assembler that exploit the pair-end i
 
 =item * FastMin-SG
 
-Fastmin-SG is an ultrafast alignment-free algorihtm for pseudo-alignment fo pair-end reads from short or long-reads.
+Fastmin-SG is an ultrafast alignment-free algorithm for pseudo-alignment for pair-end reads from short or long reads.
 
 =item * IntervalMiss
 
