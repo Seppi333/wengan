@@ -152,11 +152,7 @@ sub _guess_read_length{
 
 sub is_short{
     my $self=shift;
-    if(defined $self->{sreads}){
-        return 1;
-    }else{
-      return 0;
-    }
+    return scalar(@{$self->{sreads}}) > 0 ? 1 : 0;
 }
 
 sub get_read_length{
