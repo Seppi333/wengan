@@ -7,8 +7,8 @@ Wengan::Mapper::FMS
 
 =head1 DESCRIPTION
 
-This Object perform the task fo mapping short-read to a set of given contigs.
-The short-reads are mapped unsing the FastMin-SG progam.
+This Object perform the task for mapping short-read to a set of given contigs.
+The short-reads are mapped using the FastMin-SG program.
 
 =head2 Available methods
 
@@ -55,7 +55,7 @@ sub main_target{
 sub create_jobs{
   my ($self,$reads)=@_;
 
-  #Ouput files from FastMin-SG
+  #Output files from FastMin-SG
   #Modified FM for long-read
   ### sprintf(filename, "%s.I%d.fm.sam", prefix,inserts[i]);
   ## FM modified for short-Reads
@@ -77,7 +77,7 @@ sub create_jobs{
           push(@{$self->{main_target}},$self->{prefix}.$c.".ccs.I500.fm.sam");
           $c++;
       }
-      #now we create the comand that run FastMin-SG
+      #now we create the command that run FastMin-SG
   }elsif($self->{preset} eq "ccsont" or $self->{preset} eq "ccspac"){
           my $c=1;
           push(@{$job->{deps}},@{$self->{dependency}});

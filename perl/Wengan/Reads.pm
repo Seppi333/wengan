@@ -139,7 +139,7 @@ sub _guess_read_length{
 	#we assume fastq format
 	while(my $line=<FILE>){
 		$l+=length(<FILE>);
-		#we skyp the next 2 line
+		#we skip the next 2 line
 		<FILE>;<FILE>;
 		if($readc >= 1000){
 			last;

@@ -30,7 +30,7 @@ my @abun=(2,2,2);
 my $cores=$opts{c};
 my $prefix=$opts{p};
 my $memory=5000;
-# we set the memory if necesary
+# we set the memory if necessary
 if(defined $opts{b} and $opts{b} > $memory){
 	$memory=$opts{b};	
 }

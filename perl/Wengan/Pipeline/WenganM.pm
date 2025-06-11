@@ -35,7 +35,7 @@ sub new {
 	my $tools=();
   #create the tools of the pipeline
 	foreach my $t(@tools_name){
-    #dinamic load fo the pipeline tools
+    #dynamic load of the pipeline tools
 		load $t;
 		my $name=$t;
 		my $tmp= new $name(%opts);

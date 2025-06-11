@@ -56,8 +56,8 @@ Table of Contents
 # Description
 
 **Wengan** is a new genome assembler that unlike most of the current long-reads assemblers avoids entirely the all-vs-all read comparison.
-The key idea behind **Wengan** is that long-read alignments can be **inferred by building paths** on a sequence graph. To achieve this, **Wengan** builds a new sequence graph called the Synthetic Scaffolding Graph. The SSG is built from a spectrum of synthetic mate-pair libraries extracted from raw long-reads. Longer alignments are then built by peforming a transitive reduction of the edges.
-Another distinct feature of **Wengan** is that it performs **self-validation** by following the read information. **Wengan** identifies miss-assemblies at differents steps of the assembly process. For more information about the algorithmic ideas behind **Wengan** please read the preprint available in bioRxiv.
+The key idea behind **Wengan** is that long-read alignments can be **inferred by building paths** on a sequence graph. To achieve this, **Wengan** builds a new sequence graph called the Synthetic Scaffolding Graph. The SSG is built from a spectrum of synthetic mate-pair libraries extracted from raw long-reads. Longer alignments are then built by performing a transitive reduction of the edges.
+Another distinct feature of **Wengan** is that it performs **self-validation** by following the read information. **Wengan** identifies miss-assemblies at different steps of the assembly process. For more information about the algorithmic ideas behind **Wengan** please read the preprint available in bioRxiv.
 
 # Short-read assembly
 

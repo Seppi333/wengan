@@ -41,8 +41,8 @@ B<Wengan> - An accurate and ultrafast genome assembler
 
 
 B<Wengan> is a new genome assembler that unlike most of the current long-reads assemblers avoid entirely the all-vs-all read comparison.
-The key idea behind B<Wengan> is that long-read alignments can be B<inferred by building paths> on a sequence graph. To achieve this, B<Wengan> build a new sequence graph called the Synthetic Scaffolding Graph. The SSG is build from a spectrum of synthetic mate-pair libraries extracted from raw long-reads. Then, longer alignments are build by peforming a transitive reduction of the edges.
-Another distinct feature of B<Wengan> is that is the only assembler that perform B<self-validation> by following the read information. B<Wengan> identify miss-assemblies at differents steps of the assembly process. For more information about the algorithmic ideas behind B<Wengan> please read the preprint available on bioRxiv.
+The key idea behind B<Wengan> is that long-read alignments can be B<inferred by building paths> on a sequence graph. To achieve this, B<Wengan> build a new sequence graph called the Synthetic Scaffolding Graph. The SSG is build from a spectrum of synthetic mate-pair libraries extracted from raw long-reads. Then, longer alignments are build by performing a transitive reduction of the edges.
+Another distinct feature of B<Wengan> is that is the only assembler that perform B<self-validation> by following the read information. B<Wengan> identify miss-assemblies at different steps of the assembly process. For more information about the algorithmic ideas behind B<Wengan> please read the preprint available on bioRxiv.
 
 
 =head2 ABOUT THE NAME
@@ -57,7 +57,7 @@ Email digenova@gmail.com
 =head1 SHORT-READ ASSEMBLY
 
 B<Wengan> uses a de bruijn graph assembler to build the assembly backbone from short-read data.
-Currently, B<Wengan> can use B<Minia3>, B<Abyss2> or B<DiscoVarDenovo>.  The recomended short-read coverage
+Currently, B<Wengan> can use B<Minia3>, B<Abyss2> or B<DiscoVarDenovo>.  The recommended short-read coverage
 is B<50-60X> of 2 x 150bp  or 2 x 250bp short reads.
 
 =head2 WenganM [M]
@@ -88,7 +88,7 @@ use FindBin;
 $ENV{WROOTDIR}="$FindBin::Bin";
 #load the wengan library
 use lib "$FindBin::Bin/perl";
-#local perl clases to control the wengan execution
+#local perl classes to control the wengan execution
 use Wengan::Reads; # class to handle the read data.
 use Wengan::Scheduler::Local; # the scheduler is make and control the execution end-to-end
 
@@ -116,7 +116,7 @@ sub usage {
       -c <pre-assembled short-read contigs>
       -i <insert size lists for raw long-reads>
       -I <insert size list for CCS reads>
-      -n <show pipeline comands>;
+      -n <show pipeline commands>;
 
    Advanced Options (Change the presets):
       FastMin-SG options:
@@ -131,7 +131,7 @@ sub usage {
         -M Minimum contig length in TR [def:2000]
         -R Repeat copy number factor [def:1.5]
         -L Length of long mate-edges [def:100000]
-        -N Number of long-read needed to keep a potencial erroneus mate-edge [def:5]
+        -N Number of long-read needed to keep a potential erroneous mate-edge [def:5]
         -P Minimum length of reduced paths to convert them to physical fragments [def:20kb]
         -Q Minimum contig length in matching [def:2000]
         -U Repeat copy number factor backbone [def:1.5]
@@ -176,7 +176,7 @@ if($opts{x} eq "ontlon"){
 }elsif($opts{x} eq "ccsont" or $opts{x} eq "ccspac"){
 	wengan_ccslong($reads,%opts);
 }else{
-	print "Unkown preset $opts{x}\n";
+	print "Unknown preset $opts{x}\n";
 	usage();
 	exit 1;
 }
@@ -225,7 +225,7 @@ if($opts{a} eq "M"){
 }elsif($opts{a} eq "D"){
       $pipeline=Wengan::Scheduler::Local->new($reads,"WenganD",%opts);
 }else{
-	print "Unkown pipeline $opts{a}\n";
+	print "Unknown pipeline $opts{a}\n";
   print "Available pipelines: WenganM, WenganA, WenganD\n";
 	usage();
 	exit 1;
@@ -249,7 +249,7 @@ The recommended long-read coverage is 30X.
 
 =head2	ontlon
 
-preset for raw ultra-long-reads from Oxford Nanopore, tipically having an  N50 > 50kb.
+preset for raw ultra-long-reads from Oxford Nanopore, typically having an  N50 > 50kb.
 
 =cut
 
@@ -261,7 +261,7 @@ sub wengan_ontlon{
 
 =head2	ontraw
 
-preset for raw long-reads Nanopore reads tipically having an  N50 ~[15kb-40kb].
+preset for raw long-reads Nanopore reads typically having an  N50 ~[15kb-40kb].
 
 =cut
 
@@ -276,7 +276,7 @@ sub wengan_ontraw{
 
 =head2	pacraw
 
-preset for raw long-reads from Pacific Bioscience (PacBio) tipically having an  N50 ~[8kb-60kb].
+preset for raw long-reads from Pacific Bioscience (PacBio) typically having an  N50 ~[8kb-60kb].
 
 =cut
 
@@ -291,7 +291,7 @@ sub wengan_pacraw{
 
 =head2	ccsont/ccspac
 
-preset for Hybrid assembly of Circular Consensus Sequences from Pacific Bioscience (PacBio) tipically having an  N50 ~[15kb].
+preset for Hybrid assembly of Circular Consensus Sequences from Pacific Bioscience (PacBio) typically having an  N50 ~[15kb].
 The current version has been tested only in haploid human genomes.
 
 =cut
@@ -310,7 +310,7 @@ sub wengan_ccslong{
 
 =head2	pacccs
 
-preset for Circular Consensus Sequences from Pacific Bioscience (PacBio) tipically having an  N50 ~[15kb].
+preset for Circular Consensus Sequences from Pacific Bioscience (PacBio) typically having an  N50 ~[15kb].
 
 =cut
 
@@ -371,7 +371,7 @@ Long-reads overlap options:
 
 Validation of lines options:
 
-      -N INT     Number of long-read needed to keep a potencial erroneus mate-edge [--nlm] (default=`5', min=`1')
+      -N INT     Number of long-read needed to keep a potential erroneous mate-edge [--nlm] (default=`5', min=`1')
       -P INT     Minimum length of reduced paths to convert them to physical fragments [--mlp] (default=`20000', min=`5000')
 
 =cut

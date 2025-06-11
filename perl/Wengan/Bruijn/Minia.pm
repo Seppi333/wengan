@@ -14,7 +14,7 @@ sub new{
 	}
 
  if(!defined SEQTK_BIN ){
-      die "Seqtk binary not found for Minia3 post procesing\n";
+      die "Seqtk binary not found for Minia3 post processing\n";
   }
   #pipeline for ccsont
   #minimum variables for Minia3
@@ -138,7 +138,7 @@ sub _create_jobs_ccslong_diploid{
     for(my $i=0; $i<scalar(@{$params->{MK}}); $i++){
       my $job=();
       my $k=$params->{MK}[$i];
-      #we iterate the reads to add the comands to file
+      #we iterate the reads to add the commands to file
       my $create=0;
 
       foreach my $r (@hifi_files){
@@ -217,7 +217,7 @@ sub _create_jobs_ccslong_diploid2{
     for(my $i=0; $i<scalar(@{$params->{MK}}); $i++){
       my $job=();
       my $k=$params->{MK}[$i];
-      #we iterate the reads to add the comands to file
+      #we iterate the reads to add the commands to file
       my $create=0;
 
       foreach my $r (@hifi_files){
@@ -285,7 +285,7 @@ sub _create_jobs_long{
     for(my $i=0; $i<scalar(@{$params->{MK}}); $i++){
       my $job=();
       my $k=$params->{MK}[$i];
-      #we iterate the reads to add the comands to file
+      #we iterate the reads to add the commands to file
       my $create=0;
       foreach my $r (@{$reads->{lreads}}){
         if($create == 0){
@@ -348,7 +348,7 @@ sub _create_jobs_short{
     for(my $i=0; $i<scalar(@{$params->{MK}}); $i++){
       my $job=();
       my $k=$params->{MK}[$i];
-      #we iterate the reads to add the comands to file
+      #we iterate the reads to add the commands to file
       my $create=0;
       foreach my $r (@{$reads->{sreads}}){
         if($create == 0){

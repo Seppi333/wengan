@@ -117,7 +117,7 @@ sub _to_file{
 
     ### on perl's before 5.10 (5.9.5@31746) if you require
     ### a file in VMS format, it's stored in %INC in VMS
-    ### format. Therefor, better unixify it first
+    ### format. Therefore, better unixify it first
     ### Patch in reply to John Malmbergs patch (as mentioned
     ### above) on p5p Tue 21 Aug 2007 04:55:07
     $file = VMS::Filespec::unixify($file) if $^O eq 'VMS';
@@ -163,7 +163,7 @@ Module::Load - runtime require of both modules and files
 
   my $script = 'some/script.pl'
   load $script;
-  load 'some/script.pl';  # use quotes because of punctuations
+  load 'some/script.pl';  # use quotes because of punctuation
 
   load thing;             # try 'thing' first, then 'thing.pm'
 
@@ -234,7 +234,7 @@ Loads a specified module to the specified package.
 
 A module for loading must be quoted.
 
-Except specifing the package and quoting module name,
+Except specifying the package and quoting module name,
 'load_remote' is same as 'load'.
 
 =item autoload_remote
@@ -250,7 +250,7 @@ Loads a specified module and imports the default functions to the specified pack
 
 A module for loading must be quoted.
 
-Except specifing the package and quoting module name,
+Except specifying the package and quoting module name,
 'autoload_remote' is same as 'load_remote'.
 
 =back

@@ -7,7 +7,7 @@ Wengan::Chimeric::IM
 =head1 DESCRIPTION
 
 This Object perform the task of detecting assembly errors on a set of contigs.
-The assembly is validated using the IntervalMiss progam.
+The assembly is validated using the IntervalMiss program.
 
 =cut
 
@@ -31,7 +31,7 @@ sub new{
   return ($self);
 }
 
-#methods for controling the dependencies between tools
+#methods for controlling the dependencies between tools
 sub set_init_dependency{
       my ($self,$dep)=@_;
       push(@{$self->{dependency}},@{$dep});
@@ -56,7 +56,7 @@ sub create_jobs{
   push(@{$job->{deps}},@{$self->{dependency}});
     my $c=1;
   foreach my $d (@{$self->{dependency}}){
-      #we skypt the contigs sequences
+      #we skip the contigs sequences
       next if($d eq $self->{contigs});
       my $t=0;#short
       $t=1 if($d=~m/.im./);
@@ -78,7 +78,7 @@ sub create_jobs{
   #outputs from intervalmiss
   # string p = prefix + ".MBC" + to_string(ai.mbc_arg[i]);
   #//we create the fasta of the contigs
-  #ofstream fasta; //save normal ctgs and quimeric splitted
+  #ofstream fasta; //save normal ctgs and quimeric split
   #fasta.open(prefix+".msplit.fa");
   my $param=$self->_def_parameters(undef);
   my @mopt=($param,

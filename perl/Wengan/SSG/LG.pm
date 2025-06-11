@@ -34,7 +34,7 @@ sub new{
   return ($self);
 }
 
-#methods for controling the dependencies between tools
+#methods for controlling the dependencies between tools
 sub set_init_dependency{
       my ($self,$dep)=@_;
       $self->{contigs}=@$dep[0];#contigs
@@ -111,7 +111,7 @@ sub _def_parameters{
       #-M Minimum contig length in TR [def:2000]
       #-R Repeat copy number factor [def:1.5]
       #-L Length of long mate-edges [def:100000]
-      #-N Number of long-read needed to keep a potencial erroneus mate-edge [def:5]
+      #-N Number of long-read needed to keep a potential erroneous mate-edge [def:5]
       #-P Minimum length of reduced paths to convert them to physical fragments [def:20kb]
       #-Q Minimum contig length in matching [def:2000]
       #-U Repeat copy number factor backbone [def:1.5]

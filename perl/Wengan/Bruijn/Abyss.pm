@@ -19,7 +19,7 @@ sub new{
     die "ABYSS2 binary not found\n";
   }
   if(!defined SEQTK_BIN ){
-      die "Seqtk binary not found for abyss post procesing\n";
+      die "Seqtk binary not found for abyss post processing\n";
   }
 
   bless ($self, $packagename);

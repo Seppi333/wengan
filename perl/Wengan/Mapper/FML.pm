@@ -7,8 +7,8 @@ Wengan::Mapper::FML
 
 =head1 DESCRIPTION
 
-This Object perform the task fo mapping long-read to a set of given contigs for create a spectrum of synthetic mate-pair libraries.
-The synthetic mate-pair libraries are create  using the FastMin-SG progam.
+This Object perform the task for mapping long-read to a set of given contigs to create a spectrum of synthetic mate-pair libraries.
+The synthetic mate-pair libraries are created using the FastMin-SG program.
 
 =head2 Available methods
 
@@ -36,7 +36,7 @@ sub new{
 }
 
 
-#methods for controling the dependencies between tools
+#methods for controlling the dependencies between tools
 sub set_init_dependency{
       my ($self,$dep)=@_;
       push(@{$self->{dependency}},@{$dep});
@@ -76,7 +76,7 @@ sub create_jobs{
 sub _ccs_create_jobs{
   my ($self,$reads)=@_;
 
-  #Ouput files from FastMin-SG
+  #Output files from FastMin-SG
   #Modified FM for long-read
   ### sprintf(filename, "%s.I%d.fm.sam", prefix,inserts[i]);
   ## FM modified for short-Reads
@@ -117,7 +117,7 @@ sub _ccs_create_jobs{
 sub _def_create_jobs{
   my ($self,$reads)=@_;
 
-  #Ouput files from FastMin-SG
+  #Output files from FastMin-SG
   #Modified FM for long-read
   ### sprintf(filename, "%s.I%d.fm.sam", prefix,inserts[i]);
   ## FM modified for short-Reads

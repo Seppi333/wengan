@@ -35,9 +35,9 @@ sub new {
 	#load tools of the given pipeline
   my $i=0;
   my @tools=@{$data{Pipeline}->get_tools()};
-  #create the jobs and its dependeny between the pipeline tools
+  #create the jobs and its dependency between the pipeline tools
   foreach my $t(@tools){
-    #we ask if the tool has dependecy on  a previous tool
+    #we ask if the tool has dependency on  a previous tool
     if($t->has_dependency()){
         #we get the main targets of the previous tool, usually the contigs sequence is the first one
         $t->set_init_dependency($tools[$i-1]->main_target());
@@ -117,13 +117,13 @@ sub _build_make_rules{
     #is a simple job
     if(scalar(@{$job->{target}}) == 1){
         $mp.=join(" : ",$job->{target}[0], defined $job->{deps} ? join(" ",@{$job->{deps}})."\n":"\n");
-        #we print the job comands
+        #we print the job commands
         $mp.="\t".$_."\n" foreach(@{$job->{cmds}});
     }elsif(scalar(@{$job->{target}}) > 1){
     #we create a dependency among all the jobs this is not the best solution
-    #cause deleting any dependency don't rebuild the comand.
-    #todo: create a rule capable of rebuild the comand when a target is deleted
-    #potential solutions are discused here : https://www.gnu.org/software/automake/manual/html_node/Multiple-Outputs.html
+    #cause deleting any dependency don't rebuild the command.
+    #todo: create a rule capable of rebuild the command when a target is deleted
+    #potential solutions are discussed here : https://www.gnu.org/software/automake/manual/html_node/Multiple-Outputs.html
     my @targets=@{$job->{target}};
     #we establish a dependency among the tools
     for(my $i=1; $i<scalar(@targets); $i++){

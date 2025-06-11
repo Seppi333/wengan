@@ -19,7 +19,7 @@ sub new{
     die "DiscoVarDenovo binary not found\n";
   }
   if(!defined SEQTK_BIN ){
-      die "Seqtk binary not found for contig post procesing\n";
+      die "Seqtk binary not found for contig post processing\n";
   }
 
   bless ($self, $packagename);
