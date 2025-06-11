@@ -354,8 +354,8 @@ IntervalMiss detect miss-assembled contigs and correct them when necessary.
 
 =head2  Liger
 
-Liger use the Synthetic Scaffoding Graph to compute overlap among long reads,
-order and orient short contigs, validate scaffols sequences, fill the gaps and
+Liger use the Synthetic Scaffolding Graph to compute overlap among long reads,
+order and orient short contigs, validate scaffold sequences, fill the gaps and
 polishing of the assembly.
 
 =head3 Liger options

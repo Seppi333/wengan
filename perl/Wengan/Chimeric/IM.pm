@@ -106,7 +106,7 @@ sub _create_coveragefile_jobs{
   my $target=$contigs;
   $target=~s/.fa/.cov.txt/;
   push(@{$job->{target}},$target);
-  my $cmd='grep ">" '.$contigs.' | sed \'s/>//\' | awk \'{print $$1" "$$2}\' | sed \'s/>//g\' > '.$target;
+  my $cmd='grep ">" '.$contigs.' | sed \'s/>//\' | awk \'{print $1" "$2}\' | sed \'s/>//g\' > '.$target;
   push(@{$job->{cmds}},$cmd);
   push(@{$self->{jobs}},$job);
 }
